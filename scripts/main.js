@@ -3,7 +3,6 @@
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
 function openInfo(evt, tabName) {
-
 	// Get all elements with class="tabcontent" and hide them
 	tabcontent = document.getElementsByClassName("tabcontent");
 	for (i = 0; i < tabcontent.length; i++) {
@@ -19,7 +18,6 @@ function openInfo(evt, tabName) {
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(tabName).style.display = "block";
 	evt.currentTarget.className += " active";
-
 }
 
 
@@ -60,13 +58,12 @@ function populateListProductChoices(slct1, slct2) {
 		s2.appendChild(document.createElement("br"));    
 	}
 }
-	
+
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
 
 function selectedItems(){
-	
 	var ele = document.getElementsByName("product");
 	var chosenProducts = [];
 	

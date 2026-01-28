@@ -1,46 +1,62 @@
 	
-// Array of products, each product is an object with different fieldset
-// A set of ingredients should be added to products		 
+// given restrictions provided, make a reduced list of products
+// prices should be included in this list, as well as a sort based on price
 
 var products = [
 	{
 		name: "brocoli",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price: 1.99
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
-		price: 2.35
+		price: 2.35,
+		organic: false
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
-		price: 10.00
+		price: 10.00,
+		organic: true
+	},
+	{
+		name: "pasta",
+		vegetarian: true,
+		glutenFree: false,
+		price: 3.50,
+		organic: false
+	},
+	{
+		name: "tofu",
+		vegetarian: true,
+		glutenFree: true,
+		price: 4.25,
+		organic: true
 	}
-];
-
-
-
-// given restrictions provided, make a reduced list of products
-// prices should be included in this list, as well as a sort based on price
-
+]
+//TODO: Sort products by price
 function restrictListProducts(prods, restriction) {
 	let product_names = [];
-	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
+		for (let i=0; i<prods.length; i+=1) {
+			if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
+				product_names.push(prods[i].name);
+			}
+			else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+				product_names.push(prods[i].name);
+			}
+			else if ((restriction == "LactoseFree") && (prods[i].glutenFree == true)){
+				product_names.push(prods[i].name);
+			}
+			else if (restriction == "None"){
+				product_names.push(prods[i].name);
+			}
 		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
-	}
+	
 	return product_names;
 }
 

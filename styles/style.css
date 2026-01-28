@@ -9,39 +9,44 @@
   --secondary-color: #656D3F;
   --accent-color: #492828;
 }
+
 body{
   margin: 0;
+  padding: 0;
   background-color: var(--background-color);
   font-family: 'Pompiere', cursive;
 }
 
 footer{
-  margin-top: auto;
+  position:fixed;
+  width: 100%;
+  bottom: 0;
   text-align: center;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--background-color);
   font-family: 'Pompiere', cursive;
   font-size: 0.5rem;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 button, select, textarea{
   font-family: 'Pompiere', cursive;
 }
-/* ----Class CSS Configuration---- */
+
 /* Style the navbar */
 .navbar {
   position: fixed; /*Don't move when scrolling*/
-  display: flex; /* Use flexbox for layout */
+   top: 0; /* Stick it to the top */
+  display: flex; /* Use flexbox for layout to get that iconic navbar layout*/
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  top: 0; /* Stick to the top */
-  overflow: hidden;
   border-bottom: 2px solid var(--accent-color);
+  box-shadow: var(--secondary-color);
   background-color: var(--background-color);
   font-family: 'Pompiere', cursive;
 }
+
 .logo {
   font-size: 1.5rem;
   padding-left: 30px; /* Add some padding to the left */
@@ -66,7 +71,7 @@ button, select, textarea{
 }
 
 /* Affecting only Accessibility button */
-.tabs button#Accessibility {
+.tabs button#AccessibilityTab {
   background-color: var(--primary-color);
 }
 
@@ -82,19 +87,31 @@ button, select, textarea{
 }
 
 /* forcing Accessibility button to remain the same style as the rest when active */
-.tabs button.active#Accessibility {
+.tabs button.active#AccessibilityTab {
   background-color: var(--secondary-color);
   color: var(--background-color);
 }
 
 /* Style the tab content */
-.tabcontent {
-  height: 100vh; /* Full height of viewport */
-  width: 100vw;
+ #Products, #Client, #Cart, #Accessibility{
+  height: 90vh; /* Full height of viewport */
   display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 6px 12px;
-  margin-top: 50px; /* Add a top margin to avoid content overlay */
+  margin-top: 90px; /* Add a top margin to avoid content overlay */
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+#Home {
+  height: 90vh; /* Full height of viewport */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 6px 12px;
+  margin-top: 90px; /* Add a top margin to avoid content overlay */
+  background-color: var(--secondary-color);
+  color: var(--background-color);
 }
