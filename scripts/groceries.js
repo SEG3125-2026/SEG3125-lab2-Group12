@@ -22,7 +22,7 @@ var products = [
 		price: 10.00
 	}
 ];
-	
+
 
 
 // given restrictions provided, make a reduced list of products

@@ -1,37 +1,100 @@
-/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+/* Source: https://fonts.google.com/selection/embed */
+@import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
+/* Source: https://colorhunt.co/palette/ececec84934a656d3f492828#/ */
+/* Utilizing the 60-30-10 rule for the coloring of the webpage: https://supercharge.design/articles/what-is-the-3-color-rule-in-ui-design#/ */
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+:root{
+  --background-color: #ECECEC;
+  --primary-color: #84934A;
+  --secondary-color: #656D3F;
+  --accent-color: #492828;
+}
+body{
+  margin: 0;
+  background-color: var(--background-color);
+  font-family: 'Pompiere', cursive;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
+footer{
+  margin-top: auto;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  font-family: 'Pompiere', cursive;
+  font-size: 0.5rem;
+  padding: 10px 0;
+}
+
+button, select, textarea{
+  font-family: 'Pompiere', cursive;
+}
+/* ----Class CSS Configuration---- */
+/* Style the navbar */
+.navbar {
+  position: fixed; /*Don't move when scrolling*/
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 0; /* Stick to the top */
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+  font-family: 'Pompiere', cursive;
+}
+.logo {
+  font-size: 1.5rem;
+  padding-left: 30px; /* Add some padding to the left */
+  color: var(--accent-color);
+}
+
+/* Style the buttons that are used to open the navbar */
+.navbar button {
   background-color: inherit;
-  float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
   transition: 0.3s;
+  font-size: 1rem;
+  padding: 14px 16px;
+  border-radius: 25px;
+}
+.tabs {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  padding-right: 30px; /* Add some padding to the right */
+}
+
+/* Affecting only Accessibility button */
+.tabs button#Accessibility {
+  background-color: var(--primary-color);
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.tabs button:hover {
+  background-color: var(--primary-color);
 }
 
 /* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.tabs button.active {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+/* forcing Accessibility button to remain the same style as the rest when active */
+.tabs button.active#Accessibility {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
 }
 
 /* Style the tab content */
 .tabcontent {
+  height: 100vh; /* Full height of viewport */
+  width: 100vw;
   display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+  margin-top: 50px; /* Add a top margin to avoid content overlay */
 }

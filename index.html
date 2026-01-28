@@ -5,18 +5,24 @@
 </head>
 
 <body>
-
-<!-- Tab links, each one with an onclick event associated with it -->
-<div class="tab">
-  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  <!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">
+    <h3>AQAMart</h3>
+  </div>
+  <div class="tabs">
+    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+    <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    <button class="tablinks" id="Accessibility" onclick="openInfo(event, 'Accessibility')">Accessibility</button>
+  </div>
 </div>
 
-<!-- Tab content -->
+<!-- Content of page if Client is selected -->
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
+  <textarea id="clientInfo" rows="4" cols="50" placeholder="Type here."></textarea></div></br>
 	Choose a Category:
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
@@ -26,6 +32,7 @@
 	</select>
 </div>
 
+<!-- Content of page if Products is selected -->
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
@@ -36,12 +43,30 @@
 	</button>
 </div>
 
+<!-- Content of page if Cart is selected -->
 <div id="Cart" class="tabcontent">
   <h3>Cart</h3>
   <p>Here is your cart.</p>
   <div id="displayCart"></div>
 </div>
 
+<!-- Content of page if Accessibility is selected -->
+<div id="Accessibility" class="tabcontent">
+  <h3>Accessibility</h3>
+  <div id="displayAccessibility"></div>
+  <p>Please choose your desired font size.</p>
+  <input type="radio" id="small" name="fontSize" value="small" onclick="setFontSize('small')">
+  <label for="small">Small</label><br>
+  <input type="radio" id="medium" name="fontSize" value="medium" onclick="setFontSize('medium')">
+  <label for="medium">Medium</label><br>
+  <input type="radio" id="large" name="fontSize" value="large" onclick="setFontSize('large')">
+  <label for="large">Large</label><br><br>
+</div>
+
+<footer>
+  <p>Website designed by Team 12</p>
+  <p>© 2026 AQAMart</p>
+</footer>
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>
 
