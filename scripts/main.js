@@ -21,8 +21,8 @@ function openInfo(evt, tabName) {
 }
 
 
-// generate a checkbox list from a list of products
-// it makes each product name as the label for the checkbos
+// Generate a checkbox list from a list of products
+// It makes each product name as the label for the checkbox
 
 function populateListProductChoices() {
     var s2 = document.getElementById("displayProduct");
@@ -236,4 +236,9 @@ function updateFontSize(sizePx) {
 	if (display) {
 		display.textContent = size + "px";
 	}
+}
+
+function toggleDarkMode() {
+	var html = document.documentElement;
+	html.classList.toggle("dark-mode");
 }

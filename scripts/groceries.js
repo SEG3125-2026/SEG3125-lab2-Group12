@@ -1,7 +1,8 @@
 	
-// given restrictions provided, make a reduced list of products
-// prices should be included in this list, as well as a sort based on price
+// Given restrictions provided, make a reduced list of products - Completed
+// Prices should be included in this list, as well as a sort based on price - Completed.
 
+// Array of products, each product is an object with different fieldset
 var products = [
 	{
 		name: "broccoli",
@@ -103,6 +104,7 @@ var products = [
 		image: "https://digital.loblaws.ca/PCX/20500386003_EA/en/1/20500386003_en_front_800.png"
 	}
 ]
+
 // Return a filtered list of products sorted by price (ascending)
 function restrictListProducts(prods, preferences) {
 	let filtered = [];

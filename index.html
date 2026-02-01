@@ -62,7 +62,6 @@
 </div>
 
 <!-- Content of page if Accessibility is selected -->
- <!-- TODO: font size manipulation -->
 <div id="Accessibility" class="tabcontent">
   <h2>Accessibility</h2>
   <div id="displayAccessibility">
@@ -71,6 +70,12 @@
   <input type="range" id="fontSize" min="16" max="32" step="2" value="20" oninput="updateFontSize(this.value)">
   <span id="fontSizeValue">20px</span>
   </div>
+  <!-- Dark Mode Toggle for the wonderful customers who do their shopping at 3am -->
+   <p>Toggle dark mode for better visibility.</p>
+  <toggle-switch>
+    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+    <label for="darkModeToggle">Dark Mode</label>
+  </toggle-switch>
 </div>
 <footer>
   <p>Website designed by Team 12</p>

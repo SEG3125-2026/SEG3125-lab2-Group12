@@ -1,19 +1,26 @@
 /* Source: https://fonts.google.com/selection/embed */
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 /* Source: https://colorhunt.co/palette/ececec84934a656d3f492828#/ */
-/* Utilizing the 60-30-10 rule for the coloring of the webpage: https://supercharge.design/articles/what-is-the-3-color-rule-in-ui-design#/ */
 
 :root{
   --background-color: #ECECEC;
   --primary-color: #84934A;
   --secondary-color: #656D3F;
   --accent-color: #492828;
+  --homeFontColor: #FFFFFF;
 }
-
+/* For dark mode management */
+:root.dark-mode{
+  --background-color: #656D3F;
+  --primary-color: #84934A;
+  --secondary-color: #492828;
+  --accent-color: #ECECEC;
+  --homeFontColor:#FFFFFF;
+}
+/* Default font size */
 html{
   font-size: 20px;
 }
-
 body{
   margin: 0;
   padding: 0;
@@ -28,10 +35,10 @@ footer{
   bottom: 0;
   text-align: center;
   background-color: var(--primary-color);
-  color: var(--background-color);
+  color: var(--accent-color);
   font-family: 'Pompiere', cursive;
   font-size: 1rem;
-  padding: 5px 0;
+  padding: 3px 0;
 }
 
 button, select, textarea{
@@ -97,7 +104,8 @@ button:active{
   min-height: 4rem;
   border-bottom: 2px solid var(--accent-color);
   box-shadow: var(--secondary-color);
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
   font-family: 'Pompiere', cursive;
   z-index: 10;
 }
@@ -119,6 +127,7 @@ button:active{
   padding: 14px 16px;
   border-radius: 25px;
 }
+
 .tabs {
   display: flex;
   gap: 10px; /* Space between buttons */
@@ -150,8 +159,8 @@ button:active{
   align-items: center;
   flex-direction: column;
   padding: calc(4rem + 1.5rem) 12px 6rem;
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--accent-color);
 }
 
 #Home {
@@ -160,8 +169,11 @@ button:active{
   align-items: center;
   flex-direction: column;
   padding: calc(4rem + 1.5rem) 12px 6rem;
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  background-image: linear-gradient(rgba(4, 82, 4, 0.8), rgba(0, 0, 0, 0.8)), url('Background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--background-color);
+  color: var(--homeFontColor);
 }
 
 .product-instructions{
@@ -254,3 +266,6 @@ button:active{
   cursor: pointer;
   background-color: rgba(255,255,255,0.08);
 }
+#darkModeToggle{
+   animation: ease-out 5s;
+  }
