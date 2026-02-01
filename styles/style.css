@@ -169,11 +169,11 @@ button:active{
   align-items: center;
   flex-direction: column;
   padding: calc(4rem + 1.5rem) 12px 6rem;
-  background-image: linear-gradient(rgba(4, 82, 4, 0.8), rgba(0, 0, 0, 0.8)), url('Background.jpg');
+  background-image: url('Background.png');
   background-size: cover;
   background-position: center;
   background-color: var(--background-color);
-  color: var(--homeFontColor);
+  color: var(--accent-color);
 }
 
 .product-instructions{
